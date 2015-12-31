@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="">
+	<meta name="author" content="Minh Son Nguyen">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<title>BookLibrary</title>
+	{% if environment == "Development" %}
+    	<link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.css" />
+    	<link rel="stylesheet" href="wwwroot/css/site.css" />
+    {% else %}
+    	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" />
+    	<link rel="stylesheet" href="wwwroot/css/site.css" />
+    {% endif %}
+</head>
+
+<body>
+
+	{% block content %} {% endblock %}
+    {% if environment == "Development" %}
+		<script src="wwwroot/lib/jquery/dist/jquery.js"></script>
+		<script src="wwwroot/lib/angular/angular.js"></script>
+		<script src="wwwroot/lib/angular-animate/angular-animate.js"></script>
+		<script src="wwwroot/lib/angular-route/angular-route.js"></script>
+		<script src="wwwroot/js/site.js"></script>
+    {% else %}
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+		</script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js">
+		</script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.min.js">
+		</script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.min.js">
+		</script>
+		<script src="wwwroot/js/site.min.js">
+		</script>
+    {% endif %}
+</body>
+
+</html>

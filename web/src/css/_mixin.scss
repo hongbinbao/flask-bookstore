@@ -1,0 +1,62 @@
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin box-shadow($specs) {
+	-webkit-box-shadow: $specs;
+	-moz-box-shadow: $specs;
+	-ms-box-shadow: $specs;
+	box-shadow: $specs;
+}
+
+@mixin transition($specs) {
+	-webkit-transition: $specs;
+	-moz-transition: $specs;
+	-ms-transition: $specs;
+	transition: $specs;
+}
+
+@mixin transform($specs) {
+	-webkit-transform: $specs;
+	-moz-transform: $specs;
+	transform: $specs;
+}
+
+@mixin transform-style($specs) {
+	-webkit-transform-style: $specs;
+	-moz-transform-style: $specs;
+    transform-style: $specs;
+}
+
+@mixin perspective($specs) {
+	-webkit-perspective: $specs;
+	-moz-perspective: $specs;
+	perspective: $specs;
+}
+
+@mixin blur($specs) {
+	-webkit-filter: blur($specs);
+	-moz-filter: blur($specs);
+	-o-filter: blur($specs);
+	-ms-filter: blur($specs);
+	filter: blur($specs);
+}
+
+@mixin translate3d($x, $y, $z) {
+	-webkit-transform: translate3d($x, $y, $z);
+	-moz-transform: translate3d($x, $y, $z);
+	-o-transform: translate3d($x, $y, $z);
+	-ms-transform: translate3d($x, $y, $z);
+	transform: translate3d($x, $y, $z);
+}
+
+@mixin forceGpu() {
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+}

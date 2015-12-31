@@ -1,0 +1,27 @@
+{% extends "_layout.html" %}
+{% block content %}
+<blur-effect class="blur-layer" scroll-element="div.content">&nbsp;</blur-effect>
+
+<div class="content">
+	<div class="jumbotron">
+		<div class="container text-center">
+			<a href="https://github.com/nguymin4" target="_blank">
+				<img alt="" class="img-circle" src="https://avatars2.githubusercontent.com/u/6953273?v=3&amp;s=460" height="180" width="180">
+			</a>
+			<h2>Minh Son Nguyen</h2>
+			<ul id="contact">
+				<li>
+					<img class="img-circle" src="wwwroot/img/icon/github-10-64.png" alt="Github" width="32" height="32" style="background-color: #ffffff;" />
+					<a href="https://github.com/nguymin4/BookLibrary">
+						https://github.com/nguymin4/BookLibrary
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="view-animate-container">
+		<div ng-view class="view-animate"></div>
+	</div>
+</div>
+{% endblock %}

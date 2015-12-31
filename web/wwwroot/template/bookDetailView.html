@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="detail-left col-md-3 col-sm-4">
+			<img ng-src="{{ ::vm.info.pictures[0] }}" alt="">
+		</div>
+		<div class="detail-right col-md-9 col-sm-8">
+			<h2>{{ ::vm.info.name }}</h2>
+			<ol class="breadcrumb">
+				<li><a href="#/">Home</a></li>
+				<li ng-repeat="category in vm.info.category.ancestors" ng-if="category!=='Books'" ng-class="{'active':$last}">
+					<a ng-href="#/category/{{::category}}">{{::category}}</a>
+				</li>
+			</ol>
+			<div class="input-group input-group-lg">
+				<label class="input-group-addon">Quantity:</label>
+				<input type="number" class="form-control ng-pristine" min="1" required="true" ng-model="vm.qty" style="width: 100px;"
+				/>
+				<button class="input-group-addon btn-success">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+				</button>
+			</div>
+			<h4 class="">Unit Price:&nbsp; {{::vm.info.price.amount | currency}}</h4>
+			<hr />
+			<h4 class="">Total Price: {{vm.info.price.amount * vm.qty | currency}}</h4>
+		</div>
+	</div>
+</div>

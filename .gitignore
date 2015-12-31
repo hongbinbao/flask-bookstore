@@ -1,0 +1,6 @@
+**/wwwroot/lib
+**/wwwroot/css/*
+!**/wwwroot/css
+**/wwwroot/js/*
+!**/wwwroot/js
+*.pyc
