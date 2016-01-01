@@ -1,4 +1,4 @@
-## BookLibrary App - Python Flask
+## BookStore App - Python Flask
 
 
 <img src="https://github.com/nguymin4/BookLibrary/blob/master/docs/img/ss1.jpg" height="375px" />
@@ -8,7 +8,6 @@
 ### Back-end:
 - Python Flask
 - MongoDB
-- Testing with xUnit
 
 ### Front-end:
 - AngularJS
