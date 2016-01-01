@@ -1,4 +1,4 @@
-angular.module("bookLibrary")
+angular.module("bookStore")
 	.controller("BookDetailController", BookDetailController);
 
 BookDetailController.$inject = ["$scope", "$routeParams", "bookService"];

@@ -1,4 +1,4 @@
-angular.module("bookLibrary")
+angular.module("bookStore")
 	.factory("staticInterceptor", apiInterceptor);
 
 apiInterceptor.$inject = ["$q", "config"];

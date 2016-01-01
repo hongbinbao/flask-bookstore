@@ -1,8 +1,8 @@
 var dependencies = ["ng", "ngRoute", "ngAnimate", "sharedComponents"];
 
-angular.module("bookLibrary", dependencies)
+angular.module("bookStore", dependencies)
 	.constant("config", {
-		appName: "BookLibrary",
+		appName: "BookStore",
 		appVersion: 1.0,
 		// apiUrl: "https://nguymin4-aspnet.herokuapp.com"
 		// apiUrl: "http://localhost:5004"

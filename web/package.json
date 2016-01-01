@@ -1,10 +1,10 @@
 {
-  "name": "BookLibrary",
-  "description": "Front-end for BookLibrary app",
+  "name": "BookStore",
+  "description": "Front-end for BookStore app",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nguymin4/BookLibrary/BookLibrary.git"
+    "url": "https://github.com/nguymin4/flask-bookstore/flask-bookstore.git"
   },
   "scripts": {
     "test": "node node_modules/karma/bin/karma start test/karma.conf.js"

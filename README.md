@@ -1,8 +1,8 @@
 ## BookStore App - Python Flask
 
 
-<img src="https://github.com/nguymin4/BookLibrary/blob/master/docs/img/ss1.jpg" height="375px" />
-<img src="https://github.com/nguymin4/BookLibrary/blob/master/docs/img/ss3.jpg" height="375px" />
+<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss1.jpg" height="375px" />
+<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss3.jpg" height="375px" />
 <br/>
 
 ### Back-end:

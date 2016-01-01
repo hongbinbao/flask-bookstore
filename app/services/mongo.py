@@ -27,6 +27,5 @@ class MongoService(object):
         client = MongoClient(uri)
         self._db = client.get_database(config["mongo.db"])
 
-    # pylint: disable=W0612
     def get_database(self):
         return self._db

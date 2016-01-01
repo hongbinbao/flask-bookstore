@@ -1,7 +1,7 @@
 import "./apiInterceptor.js"
 import "./staticInterceptor.js"
 
-angular.module("bookLibrary").config(config);
+angular.module("bookStore").config(config);
 
 function config($httpProvider) {
 	$httpProvider.interceptors.push("apiInterceptor");

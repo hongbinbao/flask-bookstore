@@ -1,4 +1,4 @@
-angular.module("bookLibrary")
+angular.module("bookStore")
 	.factory("categoryService", categoryService);
 
 categoryService.$inject = ["$http"]

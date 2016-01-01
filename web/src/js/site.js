@@ -3,4 +3,4 @@ import "./config/index.js"
 import "./book/index.js";
 import "./shared/index.js";
 
-angular.bootstrap("body", ["bookLibrary"]);
+angular.bootstrap("body", ["bookStore"]);

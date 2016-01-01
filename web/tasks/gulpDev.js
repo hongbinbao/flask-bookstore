@@ -40,12 +40,4 @@ module.exports = function (env, input, output) {
 		gulp.watch(output.js + "/**/*.js")
 			.on("change", browserSync.reload);
 	});
-
-	gulp.task("test:cs", function () {
-		spawn("dnx", ["test"], {
-			cwd: "../BookLibrary.Test",
-			detached: true,
-			stdio: "inherit"
-		});
-	});
 }

@@ -16,7 +16,7 @@ describe("Book Controller ", function () {
 	];
 
 	beforeEach(function () {
-		injector = angular.injector(["bookLibrary", "ngMockE2E"]);
+		injector = angular.injector(["bookStore", "ngMockE2E"]);
 		injector.invoke(function (_bookService_, _$httpBackend_, $rootScope, $controller) {
 			rootScope = $rootScope;
 			bookService = _bookService_;

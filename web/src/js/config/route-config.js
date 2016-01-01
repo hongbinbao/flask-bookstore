@@ -1,4 +1,4 @@
-angular.module("bookLibrary").config(config);
+angular.module("bookStore").config(config);
 
 function config($routeProvider, $locationProvider) {
 	$routeProvider

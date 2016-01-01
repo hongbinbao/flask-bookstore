@@ -9,7 +9,7 @@ xdescribe("<book-cell> directive ", function () {
 	}
 
 	beforeEach(function () {
-		injector = angular.injector(["bookLibrary", "wwwroot/template/bookCellDirective.html"]);
+		injector = angular.injector(["bookStore", "wwwroot/template/bookCellDirective.html"]);
 		injector.invoke(function ($templateCache, $rootScope, $compile) {
 			template = $templateCache.get("wwwroot/template/bookCellDirective.html");
 			$templateCache.put("template/bookCellDirective.html", template);

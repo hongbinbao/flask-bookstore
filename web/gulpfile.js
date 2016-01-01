@@ -5,7 +5,7 @@ var env = {
 };
 
 var input = {
-	html: ["../BookLibrary/Views/**/*.cshtml", "wwwroot/template/**/*.html"],
+	html: ["../app/templates/**/*.html", "wwwroot/template/**/*.html"],
 	scss: "src/css/**/*.scss",
 	js: "src/js/**/*.js"
 };
