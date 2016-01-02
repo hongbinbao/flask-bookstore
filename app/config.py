@@ -1,6 +1,6 @@
 import json
 import pkgutil
-import inspect
+# import inspect
 from os import path
 
 import routes
@@ -44,8 +44,9 @@ def configure_routes(app):
     for importer, modname, ispkg in pkgutil.iter_modules(routes.__path__):
         route = importer.find_module(modname).load_module(modname)
         if "config" in dir(route):
-            args = inspect.getargspec(route.config).args
-            if len(args) == 2:
-                route.config(app, provider)
-            else:
-                route.config(app)
+            route.config(app)
+            # args = inspect.getargspec(route.config).args
+            # if len(args) == 2:
+            #     route.config(app, provider)
+            # else:
+            #     route.config(app)
