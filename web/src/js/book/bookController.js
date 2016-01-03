@@ -25,14 +25,14 @@ function BookController($scope, $routeParams, bookService, categoryService) {
 				vm.books = vm.books.concat(response.data);
 				// console.log(vm.books.length);
 				pageNum++;
+				isLoading = false;
 			}
-			isLoading = false;
 		});
 	}
 	var windowScrollEnd = $scope.$on("windowScrollEnd", function () {
 		if (!isLoading) loadPage();
 	});
-	
+
 	// Breadcrum
 	if ($routeParams.category) loadBreadcrum();
 	function loadBreadcrum() {

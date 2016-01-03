@@ -43,7 +43,7 @@ def config(app):
         title = title.replace("%20", " ")
         for keyword in title.split(" "):
             if len(keyword) > 1:
-                criteria = {"name": Regex(keyword.lower(), "i")}
+                criteria = {"name": Regex("^" + keyword.lower(), "i")}
                 query["$or"].append(criteria)
         docs = []
         for doc in books.find(query, projection).skip(skip).limit(limit):
