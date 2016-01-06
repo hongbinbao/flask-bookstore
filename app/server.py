@@ -13,8 +13,8 @@ static = path.relpath(conf["hosting.static"])
 app = Flask("BookStore", static_folder=static)
 app.config["environment"] = env("FLASK_ENV") or "Development"
 app.config["DEBUG"] = app.config["environment"] == "Development"
-app.config["host"] = env("FLASK_HOST") or conf["hosting.host"]
-app.config["port"] = env("FLASK_PORT") or conf["hosting.port"]
+app.config["host"] = env("HOST") or conf["hosting.host"]
+app.config["port"] = env("PORT") or conf["hosting.port"]
 
 # Configure routes and services
 config.configure_services("mongo", app)

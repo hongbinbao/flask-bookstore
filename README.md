@@ -9,6 +9,13 @@
 - Python Flask
 - MongoDB
 
+#### Heroku deployment
+- Build front-end at local machine
+- Recommend to create new branch to add folders and ignore folders
+- Setup 3 environment variables for MongoDB:
+`Mongo_Host`, `Mongo_Username`, `Mongo_Password`
+
+
 ### Front-end:
 - AngularJS
 - Testing with Jasmine, Karma
@@ -29,7 +36,7 @@ gulp webpack
 # both task above + uglify js
 gulp build
 
-# init browser-sync as proxy for dnx kestrel
+# start browser-sync as proxy
 # watch files to compile sass, pack javascript
 gulp dev
 ```
