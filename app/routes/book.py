@@ -39,12 +39,12 @@ def config(app):
     def find_book(title, page_num):
         skip = page_num * limit
         projection = {"name": 1, "pictures": 1}
-        query = {"$or": []}
-        title = title.replace("%20", " ")
-        for keyword in title.split(" "):
+        query = {"name": {"$in": []}}
+        for i, keyword in enumerate(title.split(" ")):
             if len(keyword) > 1:
-                criteria = {"name": Regex("^" + keyword.lower(), "i")}
-                query["$or"].append(criteria)
+                keyword = keyword.lower()
+                criteria = Regex(r"\b{0}|\s{0}".format(keyword), "i")
+                query["name"]["$in"].append(criteria)
         docs = []
         for doc in books.find(query, projection).skip(skip).limit(limit):
             doc = normalize_id(doc)
