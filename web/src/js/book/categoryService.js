@@ -1,7 +1,7 @@
 angular.module("bookStore")
 	.factory("categoryService", categoryService);
 
-categoryService.$inject = ["$http"]
+categoryService.$inject = ["$http"];
 
 function categoryService($http) {
     var url = "/api/category/";

@@ -7,47 +7,45 @@ function BookController($scope, $routeParams, bookService, categoryService) {
 	var vm = this;
 	vm.books = [];
 	vm.searchBox = $routeParams.bookTitle;
+	vm.searchBook = () => location.hash = `/book/search/${vm.searchBox}`;
+
+	var eventHandler = [];
+	
 	// Scroll and loading new book
 	var pageNum = 0;
 	var isLoading = false;
-	loadPage();
-	function loadPage() {
-		isLoading = true;
-		var req;
-		if ($routeParams.category)
-			req = categoryService.getBooks(pageNum, $routeParams.category);
-		else
-			if ($routeParams.bookTitle)
-				req = bookService.findBooks(pageNum, $routeParams.bookTitle);
-			else req = bookService.getBooks(pageNum);
+	function loadBooks() {
+		// Exit if there is a request or reach max number of books
+		if (isLoading) return;
+		else isLoading = true;
+
+		var req = ($routeParams.category) ?
+			categoryService.getBooks(pageNum, $routeParams.category) :
+			bookService.loadBooks(pageNum, $routeParams.bookTitle);
+
 		req.then(function (response) {
 			if (response.data.length > 0) {
 				vm.books = vm.books.concat(response.data);
-				// console.log(vm.books.length);
 				pageNum++;
 				isLoading = false;
 			}
 		});
 	}
-	var windowScrollEnd = $scope.$on("windowScrollEnd", function () {
-		if (!isLoading) loadPage();
-	});
-
-	// Breadcrum
-	if ($routeParams.category) loadBreadcrum();
-	function loadBreadcrum() {
-		categoryService.get($routeParams.category)
-			.then(function (response) {
-				vm.category = response.data;
-			});
-	}
-
-	vm.searchBook = searchBook;
-	function searchBook() {
-		window.location.hash = "/book/search/" + vm.searchBox;
-	}
-
+	
+	// Initialize
+	(function init() {
+		// Load breadcrum
+		if ($routeParams.category)
+			categoryService.get($routeParams.category)
+				.then((response) => vm.category = response.data);
+		
+		loadBooks();
+		eventHandler.push($scope.$on("windowScrollEnd", loadBooks));
+	} ());
+	
+	
+	// Destroy
 	$scope.$on("$destroy", function () {
-		windowScrollEnd();
+		eventHandler.forEach(handler => handler());
 	});
 }

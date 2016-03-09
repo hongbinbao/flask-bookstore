@@ -6,10 +6,8 @@ angular.module("bookStore")
 			},
 			templateUrl: "template/bookCellDirective.html",
 			link: function ($scope, $element, $attrs) {
-				$element.addClass("book col-md-3 col-sm-4 col-xs-6");
-				
-				// Title for whole element
-				$element.attr("title", $scope.info.name);
+				$element.addClass("book col-md-3 col-sm-4 col-xs-6")
+					.attr("title", $scope.info.name); // Title for whole element
 				
 				// Open Detail view when element is clicked
 				$element.find("img, .title").on("click", clickHandler);
@@ -20,11 +18,11 @@ angular.module("bookStore")
 				// Lazy loading image
 				var range = window.innerHeight * 1.5;
 				var cover = $scope.info.pictures[0];
-				var stopScrollListening = $scope.$on("windowScroll", function (event, scrollY) {
-					render(scrollY);
-				});
-				render(window.scrollY);
-				function render(scrollY) {
+				var stopScrollListening = $scope
+					.$on("windowScroll", (event, scrollY) => loadImage(scrollY));
+
+				loadImage(window.scrollY);
+				function loadImage(scrollY) {
 					var top = $element.prop("offsetTop");
 					if (top < scrollY + range && top > scrollY - range) {
 						$element.find("img").attr("src", cover);
