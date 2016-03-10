@@ -6,8 +6,12 @@ BookController.$inject = ["$scope", "$routeParams", "bookService", "categoryServ
 function BookController($scope, $routeParams, bookService, categoryService) {
 	var vm = this;
 	vm.books = [];
-	vm.searchBox = $routeParams.bookTitle;
-	vm.searchBook = () => location.hash = `/book/search/${vm.searchBox}`;
+	vm.searchBox = $routeParams.bookTitle || "";
+	vm.searchBook = () => {
+		location.hash = vm.searchBox ? 
+			`/book/search/${vm.searchBox}` :
+			"/#";
+	};
 
 	var eventHandler = [];
 	

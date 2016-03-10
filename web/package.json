@@ -1,13 +1,14 @@
 {
-  "name": "BookStore",
+  "name": "bookstore",
   "description": "Front-end for BookStore app",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nguymin4/flask-bookstore/flask-bookstore.git"
+    "url": "https://github.com/nguymin4/aspnet-bookstore/aspnet-bookstore.git"
   },
   "scripts": {
-    "test": "node node_modules/karma/bin/karma start test/karma.conf.js"
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "protractor": "protractor test/protractor-conf.js --single-run"
   },
   "dependencies": {
     "babel-core": "^6.1.21",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "jasmine-core": "^2.3.4",
+    "jasmine-spec-reporter": "^2.4.0",
     "karma": "^0.13.15",
     "karma-jasmine": "^0.3.6",
     "karma-mocha-reporter": "^1.1.1",
@@ -29,12 +31,13 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-webpack": "^1.7.0",
     "main-bower-files": "^2.9.0",
-    "phantomjs": "^1.9.18"
+    "phantomjs": "^1.9.18",
+    "protractor": "^3.1.1"
   },
   "author": {
     "name": "Minh Son Nguyen",
     "email": "minh.son.nguyen.1209@gmail.com",
-    "url": ""
+    "url": "https://nguymin4.github.io/"
   },
   "license": "MIT"
 }
