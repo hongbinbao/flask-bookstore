@@ -7,7 +7,7 @@ function categoryService($http) {
     var url = "/api/category/";
     var service = {
 		get: get,
-		getBooks: getBooks,
+		getBooks: getBooks
     };
 
     return service;

@@ -11,7 +11,7 @@ module.exports = function (env, input, output) {
 		spawn(cmd, ["--watch"], {
 			detached: false,
 			stdio: "inherit"
-		})
+		});
 	});
 
 	gulp.task("browser-sync", ["build:dev"], function () {
@@ -32,7 +32,7 @@ module.exports = function (env, input, output) {
 		gulp.watch(input.html).on("change", browserSync.reload);
 	
 		// Watch SCSS
-		gulp.watch(input.scss, ["sass"]);
+		gulp.watch(input.scss.watch, ["sass"]);
 		gulp.watch(output.css + "/**/*.css")
 			.on("change", browserSync.reload);
 	
@@ -40,4 +40,4 @@ module.exports = function (env, input, output) {
 		gulp.watch(output.js + "/**/*.js")
 			.on("change", browserSync.reload);
 	});
-}
+};

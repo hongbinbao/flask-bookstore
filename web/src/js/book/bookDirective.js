@@ -36,5 +36,5 @@ angular.module("bookStore")
 					$element.find("img, .title").off("click", clickHandler);
 				});
 			}
-		}
+		};
 	});

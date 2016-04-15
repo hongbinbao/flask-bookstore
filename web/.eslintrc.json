@@ -1,0 +1,32 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"commonjs": true,
+		"es6": true,
+		"jquery": true,
+		"jasmine": true,
+		"protractor": true
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"semi": [
+			"error",
+			"always"
+		],
+		"no-unused-vars": [
+			1,
+			{
+				"vars": "all",
+				"args": "none"
+			}
+		],
+		"no-console": 0
+	},
+	"globals": {
+		"angular": true
+	}
+}

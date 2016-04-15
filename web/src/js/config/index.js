@@ -1,2 +1,2 @@
-import "./route-config.js"
-import "./http-config.js"
+import "./route-config.js";
+import "./http-config.js";

@@ -3,5 +3,5 @@ angular.module("sharedComponents")
 		return function(input, maxChar) {
 			if (input.length <= maxChar) return input;
 			else return input.substr(0, maxChar) + "...";
-		}
+		};
 	});

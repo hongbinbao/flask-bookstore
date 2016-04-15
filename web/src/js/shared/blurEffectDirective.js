@@ -5,7 +5,7 @@ angular.module("sharedComponents")
 			link: function ($scope, $element, $attrs) {
 				var target = $attrs.target || "." + $attrs.class;
 				var scrollElement = $($attrs.scrollElement);
-				var step = $attrs.step || 105
+				var step = $attrs.step || 105;
 				var blurRatio = 0;
 
 				setBlur();
@@ -27,5 +27,5 @@ angular.module("sharedComponents")
 					resetHeightListener();
 				});
 			}
-		}
+		};
 	});

@@ -7,7 +7,7 @@ function bookService($http) {
     var url = "/api/book/";
     var service = {
 		get: get,
-		loadBooks: loadBooks,
+		loadBooks: loadBooks
     };
 
     return service;
@@ -15,7 +15,7 @@ function bookService($http) {
 	function loadBooks(pageNum, bookTitle) {
 		return (bookTitle) ? 
 				findBooks(pageNum, bookTitle) :
-				getBooks(pageNum)
+				getBooks(pageNum);
 	}
 
 	function getBooks(pageNum) {

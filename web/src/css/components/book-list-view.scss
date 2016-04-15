@@ -1,0 +1,150 @@
+.input-group {
+	max-width: 360px;
+	margin: 50px auto 50px calc(50% - 225px);
+	
+	@media screen and (max-width: 460px) {
+		& {
+			width: calc(100% - 100px);
+			margin: 50px 5px;
+		}
+	}
+}
+
+.search-icon {
+	font-size: 2em;
+	color: #337AB7;
+}
+
+#txtSearch {
+	height: 48px;
+	font-size: 20px;
+}
+
+#btnSearch {
+	height: 48px;
+	font-size: 20px;
+	@include border-radius(0px 3px 3px 0px);
+}
+
+#list {
+	min-height: 230px;
+	& > div {
+		text-align: center;
+	}
+}
+
+.cell {
+	display: block;
+	background-color: rgba(255, 255, 255, 0.2);
+	@include border-radius(8px);
+	border: solid 1px #d4d4d4;
+	@include box-shadow(0px 0px 5px #d4d4d4);
+	margin: 20px auto;
+	height: 190px;
+	width: 290px;
+	text-decoration: none !important;
+	
+	&:hover {
+		@include box-shadow(0px 0px 10px #A7DCFF);
+		border: solid 1px #A7DCFF;
+	}
+
+}
+
+
+.cell-thumbnail {
+	background-origin: padding-box;
+	background-clip: padding-box;
+	background-repeat: no-repeat;
+	background-size: contain;
+	@include border-radius(8px 8px 0px 0px);
+	height: 160px;
+	transition: opacity 100ms ease-out;
+}
+
+.cell-title {
+	padding: 5px 10px;
+	text-align: center;
+	background-color: #337AB7;
+	border-bottom: solid 1px #d4d4d4;
+	@include border-radius(0px 0px 9px 9px);
+	margin-top: -2px;
+	color: #fff;
+	height: 30px;
+}
+
+.book {
+    min-height: 400px;
+	padding: 5px;
+	@include transition(perspective 0.25s ease);
+	@include transform-style(preserve-3d);
+	@include perspective(700);
+	
+	& > * {
+		cursor: pointer;
+	}
+	
+	&:hover {
+		// @include box-shadow(0px 0px 10px #A7DCFF);
+		// border: solid 1px #A7DCFF;
+		@include perspective(5000);
+		& .cover, & .title {
+			@include transform(rotateY(0deg))
+		} 
+	}
+	
+	&.ng-enter,
+	&.ng-leave,
+	&.ng-move {
+		@include forceGpu();
+		@include transition(all 0.25s linear);
+		-webkit-transform-origin: 50% 50%;
+		-moz-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+	}
+
+	&.ng-enter,
+	&.ng-move {
+		@include transform(scaleX(0));
+		opacity: 0;
+	}
+	
+	&.ng-enter.ng-enter-active, 
+	&.ng-move.ng-move-active {
+		@include transform(scaleX(1));
+		opacity: 1;
+	}
+
+	&.ng-leave {
+		@include transform(scaleX(1));
+		opacity: 1;
+		&.ng-leave-active {
+			@include transform(scaleX(0));
+			opacity: 0;
+		}
+	}
+	
+	.cover {
+		display: block;
+		margin: 10px auto;
+		height: 200px;
+		@include transform(rotateY(30deg));
+		@include box-shadow(0 5px 10px #888);
+		@include transition(transform 0.5s ease);
+	}
+
+	.title {
+		min-height:80px; 
+		padding-top:20px;
+		font-size: 1.25em;
+		text-align: center;
+		margin:auto auto auto auto;
+		width: 200px;
+		// background-color: #fafafa;
+		@include transform(rotateY(30deg));
+		// @include box-shadow(0 5px 10px #888);
+		@include transition(transform 0.5s ease);
+		color: #fff;
+		text-shadow: 0px 0px 20px #fff;
+	}
+}

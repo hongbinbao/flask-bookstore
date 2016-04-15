@@ -1,5 +1,5 @@
-import "./apiInterceptor.js"
-import "./staticInterceptor.js"
+import "./apiInterceptor.js";
+import "./staticInterceptor.js";
 
 angular.module("bookStore").config(config);
 

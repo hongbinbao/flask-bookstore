@@ -10,7 +10,7 @@ module.exports = function (env, input, output) {
 
 	gulp.task("sass", function () {
 		var style = env.isProduction ? "compressed" : "expanded";
-		return gulp.src(input.scss)
+		return gulp.src(input.scss.target)
 			.pipe(sass({ outputStyle: style }).on('error', sass.logError))
 			.pipe(gulp.dest(output.css));
 	});
@@ -22,16 +22,16 @@ module.exports = function (env, input, output) {
 			".\\node_modules\\.bin\\webpack.cmd" :
 			"./node_modules/.bin/webpack";
 		exec(cmd, function (err) {
-			if (!err) cb(null)
+			if (!err) cb(null);
 			else cb(true);
 		});
-	})
+	});
 
 	gulp.task("uglify:js", ["webpack"], function () {
 		var options = {
 			mangle: false,
 			output: {
-				semicolons: true,
+				semicolons: true
 			},
 			compress: {
 				warnings: false
@@ -44,4 +44,4 @@ module.exports = function (env, input, output) {
 			.pipe(rename((path) => path.basename += ".min"))
 			.pipe(gulp.dest(output.js));
 	});
-}
+};

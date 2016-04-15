@@ -11,5 +11,5 @@ function apiInterceptor($q, config) {
 			}
 			return req;
         }
-    }
+    };
 }

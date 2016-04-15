@@ -30,9 +30,10 @@
     "karma-ng-html2js-preprocessor": "^0.2.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^1.7.0",
-    "main-bower-files": "^2.9.0",	
+    "main-bower-files": "^2.9.0",
     "phantomjs-prebuilt": "^2.1.5",
-    "protractor": "^3.1.1"
+    "protractor": "^3.1.1",
+    "selenium-webdriver": "^2.52.0"
   },
   "author": {
     "name": "Minh Son Nguyen",

@@ -1,0 +1,9 @@
+@import "mixin";
+
+.content {
+	padding-bottom: 50px;
+	height: 100vh;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
