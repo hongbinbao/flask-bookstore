@@ -1,12 +1,14 @@
-'use strict';
 var env = {
 	isWindows: process.platform.indexOf("win") !== -1,
 	isProduction: /production/i.test(process.env.NODE_ENV)
 };
 
 var input = {
-	html: ["../app/templates/**/*.html", "wwwroot/template/**/*.html"],
-	scss: "src/css/**/*.scss",
+	html: ["../BookStore/Views/**/*.cshtml", "wwwroot/template/**/*.html"],
+	scss: {
+		target: ["src/css/site.scss"],
+		watch: ["src/css/**/*.scss"]
+	},
 	js: "src/js/**/*.js"
 };
 

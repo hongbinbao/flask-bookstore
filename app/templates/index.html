@@ -1,5 +1,6 @@
 {% extends "_layout.html" %}
 {% block content %}
+{% raw %}
 <blur-effect class="blur-layer" scroll-element="div.content">&nbsp;</blur-effect>
 <nav class="navbar navbar-fixed-top" ng-controller="LoginController as login">
 	<login-form ng-if="!login.user.name"></login-form>
@@ -20,7 +21,7 @@
 			<h2>Minh Son Nguyen</h2>
 			<ul id="contact">
 				<li>
-					<img class="img-circle" src="img/icon/github-10-64.png" alt="Github" width="32" height="32" style="background-color: #ffffff;" />
+					<img class="img-circle" src="wwwroot/img/icon/github-10-64.png" alt="Github" width="32" height="32" style="background-color: #ffffff;" />
 					<a href="https://github.com/nguymin4/flask-bookstore">
 						https://github.com/nguymin4/flask-bookstore
 					</a>
@@ -34,5 +35,5 @@
 		<div ng-view class="view-animate"></div>
 	</div>
 </div>
-
+{% endraw %}
 {% endblock %}

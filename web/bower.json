@@ -1,5 +1,5 @@
 {
-  "name": "MyLibrary",
+  "name": "BookStore",
   "private": true,
   "dependencies": {
     "bootstrap": "3.3.5",
@@ -11,6 +11,7 @@
     "angular-resource": "1.4.8",
     "angular-animate": "1.4.8",
     "angular-mocks": "1.4.8",
-    "angular-ui-router": "0.2.15"
+    "angular-ui-router": "0.2.15",
+    "font-awesome": "^4.6.1"
   }
 }
