@@ -11,6 +11,7 @@ conf = config.configuration
 # Initialize app
 static = path.relpath(conf["hosting.static"])
 app = Flask("BookStore", static_folder=static)
+app.secret_key = env("FLASK_SECRET") or "Development secret_key" 
 app.config["environment"] = env("FLASK_ENV") or "Development"
 app.config["DEBUG"] = app.config["environment"] == "Development"
 app.config["host"] = env("HOST") or conf["hosting.host"]
@@ -22,7 +23,7 @@ config.configure_routes(app)
 
 # Start server
 if __name__ == "__main__":
-    debug = app.config["DEBUG"]
-    host = app.config["host"]
-    port = app.config["port"]
-    app.run(debug=debug, port=int(port), host=host)
+	debug = app.config["DEBUG"]
+	host = app.config["host"]
+	port = app.config["port"]
+	app.run(debug=debug, port=int(port), host=host)

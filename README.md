@@ -1,8 +1,8 @@
 ## BookStore App - Python Flask
 
 
-<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss1.jpg" height="375px" />
-<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss3.jpg" height="375px" />
+<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss1.jpg" height="325px" />
+<img src="https://github.com/nguymin4/aspnet-bookstore/blob/master/docs/img/ss3.jpg" height="325px" />
 <br/>
 
 ### Back-end:
@@ -12,8 +12,13 @@
 #### Heroku deployment
 - Build front-end at local machine
 - Recommend to create new branch to add folders and ignore folders
-- Setup 3 environment variables for MongoDB:
+- For MongoDB, setup 3 environment variables :  
 `Mongo_Host`, `Mongo_Username`, `Mongo_Password`
+- For Google authentication, set up 3 environment variables:  
+`secret.google:clientId`, `secret.google:clientSecret`, `secret.google:host` 
+ (for example: `secure-wildwood-43560.herokuapp.com`)  
+ **Note**: Remember to set up *Authorized redirect URIs* on https://console.developers.google.com  
+ For example, this is the redirect URI of demo app https://secure-wildwood-43560.herokuapp.com/auth/login
 
 
 ### Front-end:
