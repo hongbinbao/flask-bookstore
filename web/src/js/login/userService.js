@@ -12,9 +12,6 @@ function userService($http) {
     return service;
 	
 	function getInfo() {
-		var path = url + "/info";
-		return $http.get(path).catch(function (err) {
-			throw "Error: UserService getInfo()";
-		});
+		return $http.get(url + "/info");
 	}
 }

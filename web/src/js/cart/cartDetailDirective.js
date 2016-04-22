@@ -11,6 +11,7 @@ function CartDetail(cartService) {
 				<table class="table table-striped .table-bordered">
 					<tr>
 						<th>#</th>
+						<th>&nbsp;</th>
 						<th>Title</th>
 						<th>Quantity</th>
 						<th>Unit price</th>
@@ -18,7 +19,10 @@ function CartDetail(cartService) {
 					</tr>
 					<tr ng-repeat="item in vm.items">
 						<td>{{ $index + 1 }}</td>
-						<td>{{ item.book.name }}</td>
+						<td>
+							<img ng-src="{{ item.book.pictures[0] }}" height="100" />
+						</td>
+						<td style="text-align: left">{{ item.book.name }}</td>
 						<td>{{ item.qty }}</td>
 						<td>{{ item.book.price.amount | currency }}</td>
 						<td>{{ item.book.price.amount * item.qty | currency }}</td>
@@ -48,8 +52,9 @@ function CartDetail(cartService) {
 	};
 }
 
-CartController.$inject = ["$scope", "cartService"];
-function CartController($scope, cartService) {
+CartController.$inject = ["cartService"];
+function CartController(cartService) {
 	var vm = this;
-	vm.items = cartService.items;
+	vm.items = [];
+	cartService.on("update", () => vm.items = cartService.getItems());
 }

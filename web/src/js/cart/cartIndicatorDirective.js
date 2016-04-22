@@ -8,7 +8,7 @@ function CartIndicator(cartService) {
 		template: `
 			<span class="fa fa-shopping-cart"></span>
 			<span class="indicator" ng-show="vm.items.length">
-				{{vm.items.length}}
+				{{ vm.items.length }}
 			</span>`,
 		bindToController: true,
 		controller: CartIndicatorController,
@@ -22,5 +22,6 @@ function CartIndicator(cartService) {
 CartIndicatorController.$inject = ["cartService"];
 function CartIndicatorController(cartService) {
 	var vm = this;
-	vm.items = cartService.items;
+	vm.items = [];
+	cartService.on("update", () => vm.items = cartService.getItems());
 }
