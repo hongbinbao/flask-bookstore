@@ -2,6 +2,8 @@ import json
 
 from flask import session, abort
 
+from services.auth_ulti import require_auth
+
 def config(app):
 	"""
 	/api/user
@@ -11,8 +13,6 @@ def config(app):
 	base = "/api/user"
 	
 	@app.route(base + "/info")
+	@require_auth
 	def getUserInfo():
-		if "credentials" in session:
-			return json.dumps(session["user_info"], encoding='utf-8', ensure_ascii=False)
-		else: 
-			return abort(401)
+		return json.dumps(session["user_info"], encoding='utf-8', ensure_ascii=False)

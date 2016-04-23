@@ -52,8 +52,8 @@ def config(app):
 			setAntiforgery(string.ascii_uppercase + string.digits)
 		if "authscheme" in request.args:
 			session["scheme"] = request.args.get("authscheme")
-		host = conf["secret.google:host"] or "http://localhost"
-		host += "" if conf["secret.google:host"] else ":" + str(app.config["port"])
+		host = conf["secret.google:host"] if "secret.google:host" in conf else "http://localhost"
+		host += "" if "secret.google:host" in conf else ":" + str(app.config["port"])
 		return case[session["scheme"]](host)
 		
 	@app.route("/auth/logout")
