@@ -18,7 +18,8 @@ app.config["host"] = env("HOST") or conf["hosting.host"]
 app.config["port"] = env("PORT") or conf["hosting.port"]
 
 # Configure routes and services
-config.configure_services("mongo", app)
+config.configure_services("mongoService", app)
+config.configure_services("redisService", app)
 config.configure_routes(app)
 
 # Start server
